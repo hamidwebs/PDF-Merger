@@ -5,11 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
-    "vercel-build": "echo 'build complete'"
-  },
-  "repository": {
-    "type": "git",
-    "url": "."
+    "vercel-build": "echo 'Build step not required'"
   },
   "author": "",
   "license": "ISC",
