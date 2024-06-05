@@ -5,7 +5,7 @@ const { mergePDFs } = require('./pdfMerger');
 const upload = multer({ dest: 'uploads/' });
 
 const app = express();
-const port = 3000;
+const port = 2600;
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'template/index.html'));
@@ -14,9 +14,8 @@ app.get('/', (req, res) => {
 app.use('/static', express.static('public'))
 
 app.post('/merge', upload.array('PDFs', 100), async (req, res) => {
-  const outputFilePath = path.join(__dirname, 'public', 'merged.pdf');
-  await mergePDFs(path.join(__dirname, req.files[0].path), path.join(__dirname, req.files[1].path), outputFilePath);
-  res.redirect('http://localhost:3000/static/merged.pdf')
+  await mergePDFs(path.join(__dirname, req.files[0].path), path.join(__dirname, req.files[1].path));
+  res.redirect('http://localhost:2600/static/merged.pdf')
 });
 
 app.listen(port, () => {

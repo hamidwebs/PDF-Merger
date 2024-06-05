@@ -38,10 +38,10 @@
   </nav>
   <div class="container my-3">
     <h1 class="my-3">PDFX - Your Favorite PDF Merger Tool</h1>
-    <form action="/merge" method="post" enctype="multipart/form-data">
+    <form id="pdfForm" action="/merge" method="post" enctype="multipart/form-data">
       <div class="my-3">
         <label for="formFileMultiple" class="form-label">Select Your PDFs that to be Merged</label>
-        <input class="form-control" name="PDFs" type="file" id="formFileMultiple" multiple accept=".pdf">
+        <input class="form-control" name="PDFs" type="file" id="formFileMultiple" multiple required accept=".pdf">
         <input type="submit" value="Merge" class="my-3 btn btn-outline-primary fw-bold">
       </div>
     </form>
